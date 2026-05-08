@@ -1,4 +1,3 @@
-import * as XLSX from 'xlsx';
 import type { Reading } from './rules';
 
 function normalizeHeader(value: string): string {
@@ -63,6 +62,7 @@ function pick(row: Record<string, unknown>, possibleHeaders: string[]): unknown 
 }
 
 export async function parseXlsxFile(file: File): Promise<Reading[]> {
+  const XLSX = await import('xlsx');
   const buffer = await file.arrayBuffer();
   const workbook = XLSX.read(buffer, { cellDates: true });
   const firstSheetName = workbook.SheetNames[0];

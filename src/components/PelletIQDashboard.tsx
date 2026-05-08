@@ -16,7 +16,7 @@ export default function PelletIQDashboard() {
   const [fileName, setFileName] = useState('Base demonstrativa carregada');
   const [error, setError] = useState('');
 
-  const latestReading = readings.at(-1) ?? null;
+  const latestReading = readings.length ? readings[readings.length - 1] : null;
 
   const evaluatedRules = useMemo(() => {
     return PARAMETER_RULES.map((rule) => {

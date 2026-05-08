@@ -83,3 +83,9 @@ Não precisa configurar variável de ambiente para este MVP.
 - Criar cadastro editável de regras.
 - Adicionar filtros por produto, OP e data.
 - Criar exportação dos desvios.
+
+
+## Correção de build Vercel
+
+Este pacote usa Next.js 14.2.35 e importa `xlsx` dinamicamente no navegador para evitar problemas de build/bundle na Vercel.
+
